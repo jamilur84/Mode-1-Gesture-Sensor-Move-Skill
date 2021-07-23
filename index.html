@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GestureSensorMoveSkill</title>
+<script src="leap-1.0.0.js"></script>
+<script type="text/javascript" src="mind-framework.js"></script>
+<script src="hexa_leap_interface.js"></script>
+<script type="text/javascript">
+	
+	// Initialize the Hexa Mind robot
+	mind.init({
+		callback : hexa_cb
+	});
+	
+	// Assign the Leap Frame Handler to the Leap Loop function.
+	Leap.loop(leap_frame_hdlr);
+</script>
+</head>
+
+<body>
+	<button id="start">Start</button>
+	<button id="stop">Stop</button>
+	<button id="left">Left</button>
+	<button id="right">Right</button>
+	<button id="forward">Forward</button>
+	<button id="backward">Backward</button>
+	<button id="stand-up">Stand Up</button>
+	<button id="stand-down">Stand Down</button>
+	
+	<br />
+	<br /> Hexa Command: <div id="hexa_out"></div>
+	<br />
+
+	<div id="leap_header"><h2>Leap Sensor Data</h2></div>
+	<div id="leap_out"></div>
+	<br />
+	
+	<br />
+	<br /> Debug Message: 
+	<div id="dbg_msg"></div>
+	<br />
+	
+	
+	<script type="text/javascript">
+	
+	// Register some button action handler.
+	// This is for testing the robot movement manually.
+	reg_button_ev_hdl(document);
+	
+	</script>
+</body>
+</html>
